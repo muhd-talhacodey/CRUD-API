@@ -1,10 +1,10 @@
 # To Do List CRUD API implemented with FAST API
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/3e17d781-04d6-4307-ad59-8848ddd3d3b2" />
 
-<h1>In-Memory Python CRUD API</h1>
+<h1>CRUD API</h1>
 
 <p>
-  A lightweight, high-performance <b>RESTful API</b> built to demonstrate core backend development fundamentals, HTTP routing, and full <b>CRUD</b> (<i>Create, Read, Update, Delete</i>) lifecycle operations using Python in-memory <i>List</i> data structures.
+  A lightweight, high-performance <b>RESTful API</b> built to demonstrate core backend development fundamentals, HTTP routing, and full <b>CRUD</b> (<i>Create, Read, Update, Delete</i>) lifecycle operations using Python in-memory <b>List</b> data structures.
 </p>
 
 <h2>Tech Stack & Frameworks</h2>
@@ -44,3 +44,6 @@
 <p>
   Hands-on implementation of <b>REST principles</b>, asynchronous request handling, status code management, and in-memory list operations in backend engineering.
 </p>
+
+<h2> Validation Errors </h2>
+<p> It includes validation errors for example if a string is not mentioned in the list it will return back a validation error in the document for Fast API that this specific string isn't there in the list...</p>
