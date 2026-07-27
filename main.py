@@ -17,26 +17,25 @@ async def example() ----> Like this
 =======
 
 """
-Let's implement we are at the supermarket and we need to buy some items, implement CR on it... 
+Implemented a to-do list with all HTTP methods with Fast API
 """
 
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
 
+todo_list = ["Read a book", "Do chores" , "Study"]
+
 app = FastAPI()
 
-food_items = ["Milk", "Bread" , "Eggs"]
-
 class Item(BaseModel):
-    name : str
+    name : str 
 
 # GET ---> Read the items alr mentioned in the list 
-
-@app.get("/")
-def items_present():
+@app.get("/todo")
+def todo_read():
     return{
-        "food basket" : food_items
+        "List" : todo_list
     }
 
 # POST ---> Create to add more items in the basket 
