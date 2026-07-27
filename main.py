@@ -31,22 +31,23 @@ app = FastAPI()
 class Item(BaseModel):
     name : str 
 
-# GET ---> Read the items alr mentioned in the list 
+# GET ---> Read the items already mentioned in the list
 @app.get("/todo")
 def todo_read():
     return{
         "List" : todo_list
     }
 
-# POST ---> Create to add more items in the basket 
+# POST ---> Create to add more tasks in the To Do List
 
-@app.post("/items")
-def item_added(new_item: Item):
-    food_items.append(new_item.name)
+@app.post("/todo/create")
+def todo_create(todo_create: Item):
+    todo_list.append(todo_create.name)
     return{
-        "status" : f"Successfully added {new_item.name}",
-        "Updated Basket" : food_items
+        "Successfully added" : todo_create.name , 
+        "New List" : todo_list
     }
+
 
 @app.delete("/delete")
 def item_remove(delete_item: str):
