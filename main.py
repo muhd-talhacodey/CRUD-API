@@ -49,17 +49,17 @@ def todo_create(todo_create: Item):
 
 # PUT ---> Update the task which is already present in the To-Do List
 @app.put("/todo/{todo_name}")
-def todo_update(check_item: str, update_item: Item):
-    if check_item in todo_list:
-        index = todo_list.index(check_item)
-        todo_list[index] = update_item.name
+def todo_update(check_name: str, update_name: Item):
+    if check_name in todo_list:
+        index = todo_list.index(check_name)
+        todo_list[index] = update_name.name
         return{
-            "Sucessfully changed" : check_item,
-            "Successfully added" : update_item,
+            "Sucessfully changed" : check_name,
+            "Successfully added" : update_name,
             "New List" : todo_list
         }
     return{
-        "Error" : f"Could not find {check_item}"
+        "Error" : f"Could not find {check_name}"
     }
     
 # DELETE ---> Used for deleting the tasks already present in the To-Do List
