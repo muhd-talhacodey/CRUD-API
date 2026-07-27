@@ -62,18 +62,28 @@ def todo_update(check_item: str, update_item: Item):
         "Error" : f"Could not find {check_item}"
     }
     
+# DELETE ---> Used for deleting the tasks already present in the To-Do List
+"""
+Example: Deleting Study from the list... 
+"""
 
-@app.delete("/delete")
-def item_remove(delete_item: str):
-    for item in food_items:
-        if item == delete_item:
-            food_items.remove(item)
+@app.delete("/todo/delete")
+def todo_delete(check_name : Item):
+    if check_name.name in todo_list:
+        todo_list.remove(check_name.name)
         return{
-            "New List" : food_items
+            "Delete Successful" : check_name.name , 
+            "Updated List" : todo_list
         }
+    return{
+        "Delete Unsucessful" : f"Task is not present in the list {check_name.name}" 
+    }
+    
+
+# Initialization for Host IP and Port Number
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=9999)
 
 
 
