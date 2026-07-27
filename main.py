@@ -39,7 +39,6 @@ def todo_read():
     }
 
 # POST ---> Create to add more tasks in the To Do List
-
 @app.post("/todo/create")
 def todo_create(todo_create: Item):
     todo_list.append(todo_create.name)
@@ -48,6 +47,21 @@ def todo_create(todo_create: Item):
         "New List" : todo_list
     }
 
+# PUT ---> Update the task which is already present in the To-Do List
+@app.put("/todo/{todo_name}")
+def todo_update(check_item: str, update_item: Item):
+    if check_item in todo_list:
+        index = todo_list.index(check_item)
+        todo_list[index] = update_item.name
+        return{
+            "Sucessfully changed" : check_item,
+            "Successfully added" : update_item,
+            "New List" : todo_list
+        }
+    return{
+        "Error" : f"Could not find {check_item}"
+    }
+    
 
 @app.delete("/delete")
 def item_remove(delete_item: str):
