@@ -37,7 +37,7 @@
 
 <h3>4. Delete (DELETE)</h3>
 <p>
-  Removes designated items cleanly from the list, returning appropriate <b>HTTP status codes</b> (e.g., <i>204 No Content</i> or <i>404 Not Found</i>).
+  Removes designated items cleanly from the list, returning appropriate <b>HTTP status codes</b> (e.g., <i>200 for working server</i> or <i>404 Server Not Found</i>).
 </p>
 
 <h2>Key Concepts Demonstrated</h2>
